@@ -99,7 +99,7 @@ namespace Hello_World_Mod
 
 Need examples? Check out the template mods here:
 
-👉 [Template UCDC Mods](https://github.com/JacopoDev/ExampleMods)
+👉 [Template UCDC Mods](https://github.com/JacopoDev/UCDC-Mod-Templates)
 
 Includes:
 - Basic model override mod
@@ -113,16 +113,10 @@ Includes:
 
 If you want your scripts interact with the game code, you can use the mod interfaces provided by the library
 
-Interfaces library is included in the toolset as UCDC_Mod_Api.dll.
+Interfaces library is included in the toolset as `UCDC_Mod_Api.dll`.
 If you'd like to see the repository for the library, you can find it here:
 
-👉 [UCDC Mod API](https://github.com/JacopoDev/UCDC_Mod_Api)
-
-Includes:
-- Basic model override mod
-- Advanced model override (AI prompt, ragdoll, face expressions, headpats)
-- Text generation override mods
-- Voice generation mods
+👉 [UCDC Mod API](https://github.com/JacopoDev/UCDC-Mod-API)
 
 ---
 
