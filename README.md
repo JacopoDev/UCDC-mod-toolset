@@ -8,14 +8,9 @@
 Welcome! This project is a Mod Toolset for the game **Unity-Chan: Desktop Companion**.  
 Its goal is to make modding the game smooth and easy.
 
-If you have suggestions or find any issues, please join our Discord server — we have a showcase section for your mods too!
+If you have suggestions or find any issues, join our Discord server — we have a showcase section for your mods too!
 
-<!-- Discord Button -->
-<p align="center">
-  <a href="https://discord.gg/UWpYYrFTuY" target="_blank">
-    <img src="https://img.shields.io/discord/123456789012345678?label=Join%20us%20on%20Discord&logo=discord&style=for-the-badge" alt="Join us on Discord">
-  </a>
-</p>
+[![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/UWpYYrFTuY)
 
 ---
 
@@ -93,11 +88,11 @@ namespace Hello_World_Mod
         }
     }
 }
+```
 
 5. On the top bar, go to **Mod Tools → Build Mod**.
 6. Copy the resulting `.uccdcmod` file to `%USERPROFILE%/.unityChanCompanion/Mods/`.
 7. Launch the game — Unity-chan should now say: **"Hello, World!"**
-```
 ---
 
 ## 📁 Template Mods
@@ -105,6 +100,23 @@ namespace Hello_World_Mod
 Need examples? Check out the template mods here:
 
 👉 [Template UCDC Mods](https://github.com/JacopoDev/ExampleMods)
+
+Includes:
+- Basic model override mod
+- Advanced model override (AI prompt, ragdoll, face expressions, headpats)
+- Text generation override mods
+- Voice generation mods
+
+---
+
+## 📁 Mod Interfaces
+
+If you want your scripts interact with the game code, you can use the mod interfaces provided by the library
+
+Interfaces library is included in the toolset as UCDC_Mod_Api.dll.
+If you'd like to see the repository for the library, you can find it here:
+
+👉 [UCDC Mod API](https://github.com/JacopoDev/UCDC_Mod_Api)
 
 Includes:
 - Basic model override mod
