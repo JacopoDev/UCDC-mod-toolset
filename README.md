@@ -1,42 +1,56 @@
+<!-- Banner Image -->
+<p align="center">
+  <img src="Docs/ucdc_logo.png" alt="Unity-Chan: Desktop Companion"  style="max-height: 200px;" />
+</p>
+
 # 🧰 UCDC Mod Toolset
 
-Welcome! This project is a Mod Toolset for the game Unity-Chan: Desktop Companion. Its goal is to make modding the game smooth and easy.
+Welcome! This project is a Mod Toolset for the game **Unity-Chan: Desktop Companion**.  
+Its goal is to make modding the game smooth and easy.
 
-If you have any suggestion or found any issues, please join our Discord Server, we have a section to showcase your mod here too!
+If you have suggestions or find any issues, please join our Discord server — we have a showcase section for your mods too!
+
+<!-- Discord Button -->
+<p align="center">
+  <a href="https://discord.gg/UWpYYrFTuY" target="_blank">
+    <img src="https://img.shields.io/discord/123456789012345678?label=Join%20us%20on%20Discord&logo=discord&style=for-the-badge" alt="Join us on Discord">
+  </a>
+</p>
 
 ---
 
 ## 📦 Requirements
 
 - Unity **2023.2.20f1+** (LTS recommended)
+
 ---
 
-## 🔨 Installation - Manual
+## 🔨 Installation – Manual
 
 1. Create an empty Unity project.
 2. Download the latest `.unitypackage` from the [Releases tab](https://github.com/JacopoDev/UCDC-mod-toolset/releases).
-3. Drag the `UCDC Mod Toolset.unitypackage` to your Unity project window.
-4. Click `Import` and confirm that you want to import all files into your project.
+3. Drag the `UCDC Mod Toolset.unitypackage` into your Unity project window.
+4. Click `Import` and confirm that you want to import all files.
 
+---
 
-## 🚀 Installation - Unity Package Manager
+## 🚀 Installation – Unity Package Manager
 
 1. Create an empty Unity project.
-2. Download the latest `.unitypackage` from the [Releases tab](https://github.com/JacopoDev/UCDC-mod-toolset/releases).
-3. On the top bar go to **Window → Package Manager**.
-4. Click **+** and **download package from Git URL**.
-5. Enter `https://github.com/JacopoDev/UCDC-mod-toolset.git`
-6. Click `Import` and confirm that you want to import all files into your project.
+2. Open **Window → Package Manager**.
+3. Click the **+** button and select **Add package from Git URL**.
+4. Enter: `https://github.com/JacopoDev/UCDC-mod-toolset.git`
+5. Click `Add` and wait for it to import.
 
 ---
 
 ## 🛠️ Creating Your First Mod
 
-1. Do on of the Installation steps as described above.
-2. On the top bar go to **Mod Tools → Create → New Mod**
-3. It will ask for the name of the mod, and will create a directory for this mod in the `Assets` folder
-4. Add a new script in this new folder, for testing purposes add this code inside:
-```
+1. Do one of the installation steps as described above.
+2. On the top bar, go to **Mod Tools → Create → New Mod**.
+3. Enter a name for your mod. A folder will be created in `Assets/` for it.
+4. Add a new script in this folder. For testing, paste the code below:
+``` csharp
 using System;
 using System.Net;
 using System.Threading.Tasks;
@@ -49,44 +63,41 @@ namespace Hello_World_Mod
 {
     public class HelloWorld : ModScript, ITextAiAccessor
     {
-        // game will call it to provide its API database to the mod
         public void SetProvider(IAiApiProvider database)
         {
-            database.SetActiveTextAccessor(this); // Makes our script control the text generation
+            database.SetActiveTextAccessor(this);
         }
-        
-        // a method that game will use to generate message, it is called as an async Task
+
         public int GenerateMessage(IChatProvider aiProcessor, Action<TextResult> finishedAction)
         {
             int result = SendAfterTime(finishedAction).Result;
             return result;
         }
-    
+
         private async Task<int> SendAfterTime(Action<TextResult> finishedAction)
         {
-            await Task.Delay(500); // Waits for 0.5 seconds - emulate thinking, giving time for animations
-        
+            await Task.Delay(500);
+
             TextResult result = new TextResult()
             {
-                Code = (int)HttpStatusCode.OK, // this will tell the game that generation went without errors
+                Code = (int)HttpStatusCode.OK,
                 Message = new Message()
                 {
-                    role = "assistant", // possible values - system, assistant, user
-                    content = "Hello World!" 
+                    role = "assistant",
+                    content = "Hello World!"
                 }
             };
-        
+
             finishedAction.Invoke(result);
             return result.Code;
         }
     }
 }
+
+5. On the top bar, go to **Mod Tools → Build Mod**.
+6. Copy the resulting `.uccdcmod` file to `%USERPROFILE%/.unityChanCompanion/Mods/`.
+7. Launch the game — Unity-chan should now say: **"Hello, World!"**
 ```
-5. On the top bar go to **Mod Tools → Build Mod**
-6. Copy the resulting `.uccdcmod` file to the `%USERPROFILE%/.unityChanCompanion/Mods/` folder.
-7. Launch the game, from now on Unity-chan should repeat only one phrase - "Hello, World!"
-
-
 ---
 
 ## 📁 Template Mods
@@ -97,9 +108,9 @@ Need examples? Check out the template mods here:
 
 Includes:
 - Basic model override mod
-- More advanced moder override (AI prompt, ragdoll, face expressions, headpats support) mod
-- Text Generation override mods
-- Voice Generation mods
+- Advanced model override (AI prompt, ragdoll, face expressions, headpats)
+- Text generation override mods
+- Voice generation mods
 
 ---
 
