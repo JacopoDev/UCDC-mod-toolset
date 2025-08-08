@@ -99,7 +99,11 @@ namespace Hello_World_Mod
 
 Need examples? Check out the template mods here:
 
-👉 [Template UCDC Mods](https://github.com/JacopoDev/UCDC-Mod-Templates)
+👉 [UCDC Mod Templates](https://github.com/JacopoDev/UCDC-Mod-Templates)  
+
+If you want to focus on overriding Unity-chan model, there is separate set of template mods for VRM skin replacement:
+
+👉 [UCDC VRM Skin Mod Templates](https://github.com/JacopoDev/UCDC-VRM-Skin-Mod-Templates)
 
 Includes:
 - Basic model override mod
