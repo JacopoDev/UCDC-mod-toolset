@@ -110,6 +110,7 @@ Includes:
 - Advanced model override (AI prompt, ragdoll, face expressions, headpats)
 - Text generation override mods
 - Voice generation mods
+- Scene addition/override mods
 
 ---
 
